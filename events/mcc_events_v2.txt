@@ -58,323 +58,272 @@ mcc_event_v2.1002 = {
 		}
 		set_global_variable = { 
 			name = talk_scene 
+			value = flag:talk_scene_alley_night
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_alley_day
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_armory
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_battlefield
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_temple
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_corridor_night
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_corridor_day
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_council_chamber
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_courtyard
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_dungeon
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_ocean
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_terrain_travel
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_docks
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_farmland
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_feast
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_gallows
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_garden
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_market
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_burning_building
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_sitting_room
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_bedchamber
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_study
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_relaxing_room
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_physicians_study
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_tavern
+        }
+		set_global_variable = { 
+			name = talk_scene 
 			value = flag:talk_scene_throne_room
-		}
-		# Interior - Castle/Palace
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_throne_room
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_council_chamber
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_bedchamber
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_sitting_room
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_study
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_relaxing_room
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_corridor_day
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_corridor_night
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_nursery
-		}
-
-		# Interior - Functional Rooms
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_armory
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_kitchen
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_wine_cellar
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_physicians_study
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_bath_house
-		}
-
-		# Interior - Underground
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_dungeon
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_catacombs
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_cave
-		}
-
-		# Exterior - Castle/Estate
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_courtyard
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_garden
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_estate
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_dog_kennels
-		}
-
-		# Urban - Public Spaces
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_market
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_city_gate
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_alley_day
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_alley_night
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_gallows
-		}
-
-		# Urban - Buildings
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_tavern
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_crossroads_inn
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_university
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_burning_building
-		}
-
-		# Rural - Settlements
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_village
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_condemned_village
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_village_festival
-		}
-
-		# Religious
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_temple
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_holy_site
-		}
-
-		# Rural - Coastal/Water
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_docks
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_ocean
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_coast
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_beached_longships
-		}
-
-		# Military - Camps
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_army_camp
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_camp
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_camp_night
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_military_tent
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_relaxing_tent
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_campfire
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_bonfire
-		}
-
-		# Military - Battle
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_battlefield
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_legendary_battlefield
-		}
-
-		# Ceremonial
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_runestone
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_runestone_circle
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_funeral_pyre
-		}
-
-		# Events/Activities
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_feast
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_tournament
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_wedding_ceremony
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_involved_activity
-		}
-
-		# Hunting Scenes
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_hunt_forest_hut
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_hunt_forest_cave
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_hunt_foggy_forest
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_hunt_poachers_camp
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_hunt_activity_camp
-		}
-
-		# Travel/Terrain
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_farmland
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_terrain_travel
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_terrain_settlement
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_terrain_settlement_no_owner
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_travel_bridge
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_survey
-		}
-
-		# Urban - Special Cities
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_constantinople
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_city_steppe
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_chinese_city
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_japanese_city
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_examination_room
-		}
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_army_camp
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_bath_house
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_runestone
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_runestone_circle
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_beached_longships
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_kitchen
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_bonfire
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_wine_cellar
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_crossroads_inn
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_cave
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_tournament
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_holy_site
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_travel_bridge
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_hunt_forest_hut
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_hunt_forest_cave
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_hunt_foggy_forest
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_dog_kennels
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_hunt_poachers_camp
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_hunt_activity_camp
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_wedding_ceremony
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_involved_activity
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_nursery
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_courtyard
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_university
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_catacombs
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_condemned_village
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_funeral_pyre
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_legendary_battlefield
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_constantinople
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_city_gate
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_relaxing_tent
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_survey
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_terrain_settlement
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_terrain_settlement_no_owner
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_campfire
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_camp
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_camp_night
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_military_tent
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_village_festival
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_coast
+        }
+		set_global_variable = { 
+			name = talk_scene 
+			value = flag:talk_scene_city_steppe
+        }
 	}
 	
 	widget = {
