@@ -23,7 +23,7 @@
 	log_legitimacy = yes
 
 	log_income = yes
-	log_treasury = yes
+	#log_treasury = yes
 	log_influence = yes
 	log_herd = yes
 
