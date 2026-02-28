@@ -606,6 +606,12 @@ mcc_event_v2.9002 = {
 		remove_global_variable = mcc_character_5
 
 		clear_global_variable_list = mcc_characters_list_v2
+
+		trigger_event = {
+			id = mcc_event_v2.9998
+			# prevent closing of date pooler
+			days = 1
+		}
 	}
 }
 
@@ -628,6 +634,7 @@ mcc_event_v2.9003 = {
 #run/letters.txt executor
 mcc_event_v2.9998 = {
 	type = character_event
+	window = votc_invisible_event
 	title = votc_placeholder
 	theme = clipboard_transfer_event_theme
 	desc = talk_event.9999.desc
