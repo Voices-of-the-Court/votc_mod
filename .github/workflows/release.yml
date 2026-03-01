@@ -98,6 +98,6 @@ jobs:
             # Create new release as prerelease, attach zips, and let GitHub generate notes
             gh release create "$TAG" *.zip \
               --generate-notes \
-              --title "Release $TAG" \
+              --title "$TAG" \
               --prerelease
           fi
