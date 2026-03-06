@@ -1,0 +1,103 @@
+name: Create or update release
+
+on:
+  workflow_dispatch:      # allows manual trigger
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push tags and create releases
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # fetch all history and tags
+          ref: master
+
+      - name: Fetch second branch (1.17-comp)
+        run: |
+          # Fetch the other branch that should be included in the zip
+          git fetch origin 1.17-comp:refs/remotes/origin/1.17-comp || echo "Branch '1.17-comp' not found – will skip its zip"
+
+      - name: Extract version from descriptor.mod
+        id: version
+        run: |
+          VERSION=$(grep -E '^version="[^"]+"' descriptor.mod | head -1 | sed 's/^version="\(.*\)"/\1/')
+          if [ -z "$VERSION" ]; then
+            echo "❌ Could not find version in descriptor.mod"
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "✅ Version: $VERSION"
+
+      - name: Check if tag ${{ steps.version.outputs.version }} exists
+        id: tag_check
+        run: |
+          TAG="${{ steps.version.outputs.version }}"
+          if git tag -l | grep -Fx "$TAG"; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "📌 Tag $TAG already exists – will update its release"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "🏷️ Tag $TAG does not exist – will create new tag & prerelease"
+          fi
+
+      - name: Create zip archives of two branches
+        run: |
+          # Define the branches you want to zip
+          BRANCH1="master"
+          BRANCH2="1.17-comp"
+
+          # Create votc.zip
+          git archive --format=zip --output="votc.zip" "$BRANCH1"
+
+          # Create votc1.17.zip
+          if git show-ref --verify --quiet "refs/remotes/origin/$BRANCH2"; then
+            git archive --format=zip --output="votc1.17.zip" "origin/$BRANCH2"
+            echo "✅ Created votc1.17.zip"
+          else
+            echo "⚠️ Skipping votc1.17.zip – branch not found"
+          fi
+
+      - name: Create and push new tag (if version is new)
+        if: steps.tag_check.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag "$VERSION"
+          git push origin "$VERSION"
+          echo "✅ Tag $VERSION created and pushed"
+
+      - name: Create or update GitHub Release (using GitHub CLI)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          TAG="$VERSION"
+
+          # Check if release already exists for this tag
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "📦 Release $TAG exists – updating assets only (notes left untouched)"
+
+            # Delete all existing assets
+            gh release view "$TAG" --json assets -q '.assets[].name' | while read asset; do
+              echo "  Deleting old asset: $asset"
+              gh release delete-asset "$TAG" "$asset" --yes
+            done
+
+            # Upload new zip files (--clobber overwrites any leftovers)
+            gh release upload "$TAG" *.zip --clobber
+
+          else
+            echo "✨ Release $TAG does not exist – creating new prerelease with auto-generated notes"
+
+            # Create new release as prerelease, attach zips, and let GitHub generate notes
+            gh release create "$TAG" *.zip \
+              --generate-notes \
+              --title "$TAG" \
+              --prerelease
+          fi
